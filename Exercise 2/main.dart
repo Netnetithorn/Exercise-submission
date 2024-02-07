@@ -1,35 +1,28 @@
-Widget weatherBanner(BuildContext context) {
-  double screenWidth = MediaQuery.of(context).size.width;
+import 'package:flutter/material.dart';
+import './page/detail_page.dart';
 
-  return SizedBox(
-    width: screenWidth - 48,
-    height: 100,
-    child: Row (
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        _weatherBox(
-          screenWidth / 3 - 16,
-          100,
-          customChild: Icon(
-            todayWeather.condition,
-            size: 52,
-          ),
-        ),
-        _weatherBox(
-          screenWidth / 3 - 16,
-          100,
-          title: 'Bangkok',
-          subtitle1: '25°C',
-        ),
-        _weatherBox(
-          screenWidth / 3 - 16,
-          100,
-          title: "Sunny",
-          subtitle1: "Humidity: ${todayWeather.humidity.toString()}%",
-          subtitle2: "Precip: ${todayWeather.precip.toString()}%",
-        ),
-      ),
-    ),
-  );
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return (
+      const DetailPage()
+    );
+  }
 }
